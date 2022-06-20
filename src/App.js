@@ -2,6 +2,38 @@ import '../src/css/theme.min.css'
 import Testimonio from './componentes/Testimonio'
 
 export default function App() {
+
+  const testimonios = [
+    {
+      imgPokemon: 'bulbasaur',
+      nombrePokemon: 'Bulbasaur',
+      descripcionPokemon: 'Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.',
+      categoria: 'Semilla',
+      habilidad: 'Espesura'
+
+    },
+    {
+      imgPokemon: 'Cubone',
+      nombrePokemon: 'Cubone',
+      descripcionPokemon: 'Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.',
+      categoria: 'Semilla',
+      habilidad: 'Espesura',
+    },
+    {
+      imgPokemon: 'Nidorina',
+      nombrePokemon: 'Nidorina',
+      descripcionPokemon: 'Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.',
+      categoria: 'Semilla',
+      habilidad: 'Espesura',
+    },
+    {
+      imgPokemon: 'Rhydon',
+      nombrePokemon: 'Rhydon',
+      descripcionPokemon: 'Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.',
+      categoria: 'Semilla',
+      habilidad: 'Espesura',
+    }
+  ]
   return (
 
     <div className='py-6'>
@@ -12,34 +44,19 @@ export default function App() {
               <div className='tab-pane fade show active'>
                 <div className='row'>
 
-                  <Testimonio
-                    imgPokemon={'bulbasaur'}
-                    nombrePokemon={'Bulbasaur'}
-                    descripcionPokemon={'Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.'}
-                    categoria={'Semilla'}
-                    habilidad={'Espesura'} />
+                  {
+                    testimonios.map((item, i) => (
+                      <Testimonio
+                        key={i}
+                        imgPokemon={item.imgPokemon}
+                        descripcionPokemon={item.descripcionPokemon}
+                        nombrePokemon={item.nombrePokemon}
+                        categoria={item.categoria}
+                        habilidad={item.habilidad}
 
-                  <Testimonio
-                    imgPokemon={'Nidorina'}
-                    nombrePokemon={'Nidorina'}
-                    descripcionPokemon={'Se cree que el cuerno de la frente se le ha atrofiado para evitar herir a sus crías.'}
-                    categoria={'Pin Veneno'}
-                    habilidad={'Punto Tóxico'} />
-
-                    <Testimonio
-                    
-                    imgPokemon={'Cubone'}
-                    nombrePokemon={'Cubone'}
-                    descripcionPokemon={'La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz.'}
-                    categoria={'Solitario'}
-                    habilidad='Cabeza Roca' />
-
-                    <Testimonio 
-                    imgPokemon={'Rhydon'}
-                    nombrePokemon={'Rhydon'}
-                    descripcionPokemon={'Cuando evoluciona, comienza a andar con las patas traseras. Es capaz de horadar rocas.'}
-                    categoria={'Taladro'}
-                    habilidad={'Pararrayos'}/>
+                      />
+                    ))
+                  }
 
                 </div>
 
